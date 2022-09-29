@@ -2,7 +2,7 @@ body,
 * {
   --background-color: #f7f7f7;
   --border-color: #dddddd;
-  --container-padding: 10px 20px;
+  --container-padding: 6px 20px;
   --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   --main-color: rgb(34, 34, 34);
 
@@ -39,8 +39,8 @@ body,
   flex-grow: 1;
   display: flex;
   gap: 0.4em;
+  max-height: 52px;
   flex-wrap: wrap;
-  max-height: 43px;
   overflow-y: auto;
 }
 
@@ -48,7 +48,7 @@ body,
   background-color: white;
   border: 1px solid rgb(221, 221, 221);
   outline: none;
-  margin: 0px;
+  margin: 4px;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 1em;
