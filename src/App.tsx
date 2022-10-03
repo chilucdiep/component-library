@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CounterComponent from "./component/Counter";
 import Select from "./component/Select";
 import { SelectOption } from "./constants/Select.interface";
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+      <h1>Select Component</h1>
       <Select
         onChange={(option) => setSelectedOption(option)}
         options={mockOptions}
@@ -33,6 +35,9 @@ function App() {
         options={mockOptions}
         selectedOption={selectedOptions}
       />
+      <br />
+      <h1>Counter Component</h1>
+      <CounterComponent />
     </>
   );
 }
