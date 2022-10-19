@@ -28,6 +28,7 @@ As I am currently working full-time with Angular, this was a way for me to refre
 ##### Multi Select
 <div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/MultiSelect.gif" width="50%"></div>
 
+<br />
 ### Counter Component
 <div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
 
