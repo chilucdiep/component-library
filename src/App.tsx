@@ -1,7 +1,9 @@
 import { useState } from "react";
-import CounterComponent from "./component/Counter";
-import Select from "./component/Select";
+import CounterComponent from "./components/Counter";
+import Select from "./components/Select";
 import { SelectOption } from "./constants/Select.interface";
+
+// This App component allows me to display the use cases of my component library as examples.
 
 const mockOptions = [
   { label: "First", value: 1 },
@@ -12,29 +14,39 @@ const mockOptions = [
 ];
 
 function App() {
+  // Example of implmentation of the Single Select component
   const [selectedOption, setSelectedOption] = useState<
     SelectOption | undefined
   >(mockOptions[3]);
 
+  const singleSelectComponentMarkup = (
+    <Select
+      onChange={(option) => setSelectedOption(option)}
+      options={mockOptions}
+      selectedOption={selectedOption}
+    />
+  );
+
+  // Example of implmentation of the Multi-Select component
   const [selectedOptions, setSelectedOptions] = useState<SelectOption[]>([
     mockOptions[3],
   ]);
 
+  const multiSelectComponentMarkup = (
+    <Select
+      multiple
+      onChange={(option) => setSelectedOptions(option)}
+      options={mockOptions}
+      selectedOption={selectedOptions}
+    />
+  );
+
   return (
     <>
-      <h1>Select Component</h1>
-      <Select
-        onChange={(option) => setSelectedOption(option)}
-        options={mockOptions}
-        selectedOption={selectedOption}
-      />
+      <h1>Select Component (Single & Multi)</h1>
+      {singleSelectComponentMarkup}
       <br />
-      <Select
-        multiple
-        onChange={(option) => setSelectedOptions(option)}
-        options={mockOptions}
-        selectedOption={selectedOptions}
-      />
+      {multiSelectComponentMarkup}
       <br />
       <h1>Counter Component</h1>
       <CounterComponent />
