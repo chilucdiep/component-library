@@ -22,10 +22,10 @@ As I am currently working full-time with Angular, this was a way for me to refre
 
 ### Select Component (Single & Multi)
 
-#### Single Select
+##### Single Select
 <div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/SingleSelect.gif" width="50%"></div>
 
-#### Multi Select
+##### Multi Select
 <div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/MultiSelect.gif" width="50%"></div>
 
 ### Counter Component
