@@ -1,7 +1,7 @@
 # About
 
 A small library with various components.
-As I am currently working full-time with Angular, this was a way for me to refresh my React skills while applying the JavaScript/TypeScript and clean/readable code practices I learned in the past months
+As I am currently working full-time with Angular, this was a way for me to refresh my React skills while applying the JavaScript/TypeScript and clean/readable code practices I learned in the past months.
 
 # Table of Contents
 
@@ -35,7 +35,7 @@ Hi! 👋 I'm Chi-Luc, a Frontend Developer at Poka currently working on its Admi
 
 ## <a name="deployment"></a>Deployment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Vite](https://vitejs.dev/).
 
 ### Available Scripts
 
