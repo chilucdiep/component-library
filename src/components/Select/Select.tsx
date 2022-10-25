@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SelectOption } from "../constants/Select.interface";
+import { SelectOption } from "../../constants/Select.interface";
 import styles from "./Select.module.scss";
 
 type SingleSelectProps = {
@@ -18,7 +18,7 @@ type SelectProps = {
   options: SelectOption[];
 } & (SingleSelectProps | MultipleSelectProps);
 
-function Select({ multiple, onChange, options, selectedOption }: SelectProps) {
+export function Select({ multiple, onChange, options, selectedOption }: SelectProps) {
   const [isOpen, setisOpen] = useState(false);
 
   const multipleValueMarkup = Array.isArray(selectedOption)
@@ -117,5 +117,3 @@ function Select({ multiple, onChange, options, selectedOption }: SelectProps) {
       : option === selectedOption;
   }
 }
-
-export default Select;

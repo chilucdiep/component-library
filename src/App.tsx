@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CounterComponent from "./components/Counter";
-import Select from "./components/Select";
+import { Select } from "./components/Select";
 import { SelectOption } from "./constants/Select.interface";
 
 // This App component allows me to display the use cases of my component library as examples.
