@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CounterComponent from "./components/Counter";
+import { Counter } from "./components/Counter/Counter";
 import { Select } from "./components/Select";
 import { SelectOption } from "./constants/Select.interface";
 
@@ -49,7 +49,7 @@ function App() {
       {multiSelectComponentMarkup}
       <br />
       <h1>Counter Component</h1>
-      <CounterComponent />
+      <Counter />
     </>
   );
 }

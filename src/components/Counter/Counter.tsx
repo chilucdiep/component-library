@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import styles from "./Counter.module.scss";
 
-function CounterComponent() {
+export function Counter() {
   const [counter1, setCounter1] = useState<number>(0);
   const [counter2, setCounter2] = useState<number>(0);
   const [isDisabled1, setisDisabled1] = useState(false);
@@ -20,14 +20,14 @@ function CounterComponent() {
   return (
     <>
       {sumMarkup}
-      <Counter
+      <SingleCounter
         counter={counter1}
         isDisabled={isDisabled1}
         setCounter={setCounter1}
         setisDisabled={setisDisabled1}
       />
       <br />
-      <Counter
+      <SingleCounter
         counter={counter2}
         isDisabled={isDisabled2}
         setCounter={setCounter2}
@@ -44,7 +44,7 @@ type CounterProps = {
   setisDisabled: Dispatch<SetStateAction<boolean>>;
 };
 
-function Counter({
+function SingleCounter({
   counter,
   isDisabled,
   setCounter,
@@ -85,5 +85,3 @@ function Counter({
     setisDisabled((prev) => !prev);
   }
 }
-
-export default CounterComponent;
