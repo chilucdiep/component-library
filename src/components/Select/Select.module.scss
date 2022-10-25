@@ -109,12 +109,12 @@ body,
   cursor: pointer;
   padding: var(--container-padding);
   transition: all 0.2s ease;
+}
 
-  &:hover {
-    color: black;
-    font-weight: bold;
-    background-color: var(--background-color);
-  }
+.Highlighted {
+  color: black;
+  font-weight: bold;
+  background-color: var(--background-color);
 }
 
 .Option.Selected {

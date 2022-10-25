@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SelectOption } from "../../constants/Select.interface";
 import styles from "./Select.module.scss";
 
@@ -20,6 +20,48 @@ type SelectProps = {
 
 export function Select({ multiple, onChange, options, selectedOption }: SelectProps) {
   const [isOpen, setisOpen] = useState(false);
+  const [highlightedIndex, sethighlightedIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if(isOpen) sethighlightedIndex(0)
+  }, [isOpen])
+
+  useEffect(() => {
+    function handler(e: KeyboardEvent) {
+      if (e.target !== containerRef.current) return;
+
+      switch(e.code) {
+        case 'Enter':
+        case 'Space':
+          setisOpen( prev => !prev)
+
+          if (isOpen) selectOption(options[highlightedIndex])
+          break
+          
+        case 'ArrowUp':
+        case 'ArrowDown':
+          if(!isOpen) {
+            setisOpen(true)
+            break
+          }
+
+          const newHighlightedIndex = highlightedIndex + (e.code === 'ArrowDown' ? 1 : -1)
+          const isIndexWithinOptions = newHighlightedIndex >= 0 && newHighlightedIndex < options.length;
+          if (isIndexWithinOptions) {
+            sethighlightedIndex(newHighlightedIndex)
+          }
+          break
+      }
+    }
+  
+    containerRef.current?.addEventListener('keydown', handler)
+
+    return () => {
+      containerRef.current?.removeEventListener('keydown', handler)  
+    }
+  }, [isOpen, highlightedIndex, options])
+  
 
   const multipleValueMarkup = Array.isArray(selectedOption)
     ? selectedOption.map((option: SelectOption) => (
@@ -56,15 +98,18 @@ export function Select({ multiple, onChange, options, selectedOption }: SelectPr
     </button>
   );
 
-  const optionsMarkup = options.map((option) => (
+  const optionsMarkup = options.map((option, index) => (
     <li
       key={option.value}
-      className={`${styles.Option} ${
-        isOptionSelected(option) ? styles.Selected : ""
-      }`}
+      className={`
+        ${styles.Option}
+        ${isOptionSelected(option) ? styles.Selected : ""}
+        ${index === highlightedIndex ? styles.Highlighted : ""}
+      `}
       onClick={() => {
         selectOption(option);
       }}
+      onMouseEnter={() => sethighlightedIndex(index)}
     >
       {option.label}
     </li>
@@ -73,9 +118,10 @@ export function Select({ multiple, onChange, options, selectedOption }: SelectPr
   return (
     <div
       className={styles.Container}
-      tabIndex={0}
       onBlur={() => setisOpen(false)}
       onClick={() => setisOpen((prev) => !prev)}
+      ref={containerRef}
+      tabIndex={0}
     >
       {valueMarkup}
       {clearButtonMarkup}
