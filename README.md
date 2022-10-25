@@ -22,18 +22,25 @@ As I am currently working full-time with Angular, this was a way for me to refre
 
 ### Select Component (Single & Multi)
 
-### Counter Component
+##### Single Select
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/SingleSelect.gif" width="50%"></div>
 
-## <a name="improvements"></a>Future Improvements
+##### Multi Select
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/MultiSelect.gif" width="50%"></div><br /><br />
+
+### Counter Component
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
+
+# <a name="improvements"></a>Future Improvements
 
 - Add a Card component with multiple variants.
 - Add a Carousel component.
 
-## <a name="about-me"></a>About The Developer
+# <a name="about-me"></a>About The Developer
 
 Hi! 👋 I'm Chi-Luc, a Frontend Developer at Poka currently working on its Admin app. I love to build accessible and easy to use UI's to solve real world problems.
 
-## <a name="deployment"></a>Deployment
+# <a name="deployment"></a>Deployment
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).
 
