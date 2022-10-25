@@ -22,6 +22,9 @@ As I am currently working full-time with Angular, this was a way for me to refre
 
 ### Select Component (Single & Multi)
 
+**Note:**
+All components are fully functional using the keyboard for accessibility
+
 ##### Single Select
 <div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/SingleSelect.gif" width="50%"></div>
 
