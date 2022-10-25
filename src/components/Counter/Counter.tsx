@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
+import { SingleCounter } from "./components/SingleCounter";
 import styles from "./Counter.module.scss";
 
 export function Counter() {
@@ -35,53 +36,4 @@ export function Counter() {
       />
     </>
   );
-}
-
-type CounterProps = {
-  counter: number;
-  isDisabled: boolean;
-  setCounter: Dispatch<SetStateAction<number>>;
-  setisDisabled: Dispatch<SetStateAction<boolean>>;
-};
-
-function SingleCounter({
-  counter,
-  isDisabled,
-  setCounter,
-  setisDisabled,
-}: CounterProps) {
-  return (
-    <div className={styles.CounterContainer}>
-      <button
-        className={styles.Button}
-        disabled={isDisabled}
-        onClick={() => decrement()}
-      >
-        -
-      </button>
-      <p>{counter}</p>
-      <button
-        className={styles.Button}
-        disabled={isDisabled}
-        onClick={() => increment()}
-      >
-        +
-      </button>
-      <button className={styles.Button} onClick={() => handleDisable()}>
-        {isDisabled ? "Enable" : "Disable"}
-      </button>
-    </div>
-  );
-
-  function decrement() {
-    setCounter((prev) => prev - 1);
-  }
-
-  function increment() {
-    setCounter((prev) => prev + 1);
-  }
-
-  function handleDisable() {
-    setisDisabled((prev) => !prev);
-  }
 }
