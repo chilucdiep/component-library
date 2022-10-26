@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SelectOption } from "../../constants/Select.interface";
+import { SelectOption } from "./types/Select.interface";
 import styles from "./Select.module.scss";
 
 type SingleSelectProps = {
