@@ -53,7 +53,11 @@ function App() {
       <Counter />
       <br />
       <h1>Card Component</h1>
-      <Card title="Card title">
+      <Card
+        title="Card title"
+        subtitle="Issa subtitle"
+        side={<button>CTA</button>}
+      >
         <p>Content text</p>
       </Card>
     </>

@@ -13,41 +13,44 @@ body,
 }
 
 @mixin Box-Styling() {
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-  }
-  
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+}
+
 .Card {
-background-color: white;
-max-width: 500px;
-@include Box-Styling();
+  background-color: white;
+  max-width: 500px;
+  @include Box-Styling();
 }
 
 .Header {
-align-items: center;
-border-bottom: 1px solid var(--border-color);
-border-radius: 4px;
-display: flex;
-justify-content: space-between;
-padding: 0 24px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
 }
 
 .TitleSection {
-align-items: center;
-display: flex;
-gap: 8px;
-padding: 24px 0;
+  // align-items: center;
+  display: grid;
+  gap: 8px;
+  padding: 24px 0;
 }
 
 .Title {
-color: var(--charcoal);
-font-size: 20px;
-font-weight: 700;
-line-height: 22px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.Subtitle {
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .Main {
-padding: 24px;
+  padding: 24px;
 }
-
