@@ -43,6 +43,21 @@ function App() {
     />
   );
 
+  const cardComponentMarkup = (
+    <Card
+      title="Card title"
+      subtitle="Issa subtitle"
+      side={
+        <>
+          <Button label="Button label" />
+          <Button label="Button 2" />
+        </>
+      }
+    >
+      <p>Content text</p>
+    </Card>
+  );
+
   return (
     <>
       <h1>Select Component (Single & Multi)</h1>
@@ -54,14 +69,10 @@ function App() {
       <Counter />
       <br />
       <h1>Card Component</h1>
-      <Card
-        title="Card title"
-        subtitle="Issa subtitle"
-        side={<><button>CTA</button><button>CTA2</button></>}
-      >
-        <p>Content text</p>
-      </Card>
-      <Button label='Button label' />
+      {cardComponentMarkup}
+      <br />
+      <h1>Button Component</h1>
+      <Button label="Button label" />
     </>
   );
 }
