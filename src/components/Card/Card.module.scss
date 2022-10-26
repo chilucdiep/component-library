@@ -34,7 +34,6 @@ body,
 }
 
 .TitleSection {
-  // align-items: center;
   display: grid;
   gap: 8px;
   padding: 24px 0;
@@ -45,6 +44,12 @@ body,
   font-weight: 700;
   line-height: 22px;
 }
+
+.Side {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+  }
 
 .Subtitle {
   font-size: 12px;

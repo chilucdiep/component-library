@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card } from "./components/Card";
 import { Counter } from "./components/Counter/Counter";
 import { Select } from "./components/Select";
+import { Button } from "./components/Button";
 import { SelectOption } from "./components/Select/types/Select.interface";
 
 // This App component allows me to display the use cases of my component library as examples.
@@ -56,10 +57,11 @@ function App() {
       <Card
         title="Card title"
         subtitle="Issa subtitle"
-        side={<button>CTA</button>}
+        side={<><button>CTA</button><button>CTA2</button></>}
       >
         <p>Content text</p>
       </Card>
+      <Button label='Button label' />
     </>
   );
 }
