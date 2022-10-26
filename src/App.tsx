@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "./components/Card";
 import { Counter } from "./components/Counter/Counter";
 import { Select } from "./components/Select";
 import { SelectOption } from "./components/Select/types/Select.interface";
@@ -50,6 +51,11 @@ function App() {
       <br />
       <h1>Counter Component</h1>
       <Counter />
+      <br />
+      <h1>Card Component</h1>
+      <Card title="Card title">
+        <p>Content text</p>
+      </Card>
     </>
   );
 }
