@@ -4,14 +4,15 @@ import styles from "./Button.module.scss";
 type ButtonProps = {
   label: string;
   disabled?: boolean;
+  onClick?(): void;
 };
 
-export function Button({ label, disabled }: ButtonProps) {
+export function Button({ label, disabled, onClick }: ButtonProps) {
   const classes = classNames(styles.Button, {
     [styles.disabled]: disabled,
   });
   return (
-    <button disabled={disabled} className={classes}>
+    <button className={classes} disabled={disabled} onClick={onClick}>
       {label}
     </button>
   );

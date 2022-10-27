@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { Button } from "../../Button";
 import styles from "./SingleCounter.module.scss";
 
 type CounterProps = {
@@ -16,24 +17,13 @@ export function SingleCounter({
 }: CounterProps) {
   return (
     <div className={styles.CounterContainer}>
-      <button
-        className={styles.Button}
-        disabled={isDisabled}
-        onClick={() => decrement()}
-      >
-        -
-      </button>
+      <Button label="-" disabled={isDisabled} onClick={() => decrement()} />
       <p>{counter}</p>
-      <button
-        className={styles.Button}
-        disabled={isDisabled}
-        onClick={() => increment()}
-      >
-        +
-      </button>
-      <button className={styles.Button} onClick={() => handleDisable()}>
-        {isDisabled ? "Enable" : "Disable"}
-      </button>
+      <Button label="+" disabled={isDisabled} onClick={() => increment()} />
+      <Button
+        label={isDisabled ? "Enable" : "Disable"}
+        onClick={() => handleDisable()}
+      />
     </div>
   );
 
