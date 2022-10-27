@@ -22,6 +22,7 @@ export function SingleCounter({
       <Button label="+" disabled={isDisabled} onClick={() => increment()} />
       <Button
         label={isDisabled ? "Enable" : "Disable"}
+        variant="primary"
         onClick={() => handleDisable()}
       />
     </div>

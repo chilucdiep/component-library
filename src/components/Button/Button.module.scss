@@ -34,13 +34,30 @@ body,
   }
 }
 
+.primary {
+  background-color: black;
+  border-color: black;
+  border-radius: 8px;
+  color: white;
+  opacity: 0.8;
+
+  &:hover {
+    border-color: black;
+    color: white;
+    opacity: 1;
+  }
+}
+
 .disabled {
   background-color: var(--disabled-color);
+  border-color: rgb(221, 221, 221);
+  color: var(--main-color);
   opacity: 0.7;
   cursor: not-allowed;
 
   &:hover {
     color: var(--main-color);
+    opacity: 0.7;
     border-color: rgb(221, 221, 221);
   }
 }

@@ -58,21 +58,44 @@ function App() {
     </Card>
   );
 
+  const buttonComponentMarkup = (
+    <>
+      <Button label="Button primary" variant="primary" />
+      <br />
+      <br />
+      <Button
+        label="Button primary disabled"
+        variant="primary"
+        disabled={true}
+      />
+      <br />
+      <br />
+      <Button label="Button label" />
+      <br />
+      <br />
+      <Button label="Button disabled" disabled={true} />
+    </>
+  );
+
   return (
     <>
       <h1>Select Component (Single & Multi)</h1>
       {singleSelectComponentMarkup}
       <br />
+      <br />
       {multiSelectComponentMarkup}
+      <br />
       <br />
       <h1>Counter Component</h1>
       <Counter />
       <br />
+      <br />
       <h1>Card Component</h1>
       {cardComponentMarkup}
       <br />
+      <br />
       <h1>Button Component</h1>
-      <Button label="Button label" />
+      {buttonComponentMarkup}
     </>
   );
 }
