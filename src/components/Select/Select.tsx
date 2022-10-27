@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SelectOption } from "./types/Select.interface";
 import styles from "./Select.module.scss";
+import { Button } from "../Button";
 
 type SingleSelectProps = {
   multiple?: false;
@@ -18,66 +19,69 @@ type SelectProps = {
   options: SelectOption[];
 } & (SingleSelectProps | MultipleSelectProps);
 
-export function Select({ multiple, onChange, options, selectedOption }: SelectProps) {
+export function Select({
+  multiple,
+  onChange,
+  options,
+  selectedOption,
+}: SelectProps) {
   const [isOpen, setisOpen] = useState(false);
   const [highlightedIndex, sethighlightedIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if(isOpen) sethighlightedIndex(0)
-  }, [isOpen])
+    if (isOpen) sethighlightedIndex(0);
+  }, [isOpen]);
 
   useEffect(() => {
     function handler(e: KeyboardEvent) {
       if (e.target !== containerRef.current) return;
 
-      switch(e.code) {
-        case 'Enter':
-        case 'Space':
-          setisOpen( prev => !prev)
+      switch (e.code) {
+        case "Enter":
+        case "Space":
+          setisOpen((prev) => !prev);
 
-          if (isOpen) selectOption(options[highlightedIndex])
-          break
-          
-        case 'ArrowUp':
-        case 'ArrowDown':
-          if(!isOpen) {
-            setisOpen(true)
-            break
+          if (isOpen) selectOption(options[highlightedIndex]);
+          break;
+
+        case "ArrowUp":
+        case "ArrowDown":
+          if (!isOpen) {
+            setisOpen(true);
+            break;
           }
 
-          const newHighlightedIndex = highlightedIndex + (e.code === 'ArrowDown' ? 1 : -1)
-          const isIndexWithinOptions = newHighlightedIndex >= 0 && newHighlightedIndex < options.length;
+          const newHighlightedIndex =
+            highlightedIndex + (e.code === "ArrowDown" ? 1 : -1);
+          const isIndexWithinOptions =
+            newHighlightedIndex >= 0 && newHighlightedIndex < options.length;
           if (isIndexWithinOptions) {
-            sethighlightedIndex(newHighlightedIndex)
+            sethighlightedIndex(newHighlightedIndex);
           }
-          break
+          break;
       }
     }
-  
-    containerRef.current?.addEventListener('keydown', handler)
+
+    containerRef.current?.addEventListener("keydown", handler);
 
     return () => {
-      containerRef.current?.removeEventListener('keydown', handler)  
-    }
-  }, [isOpen, highlightedIndex, options])
-  
+      containerRef.current?.removeEventListener("keydown", handler);
+    };
+  }, [isOpen, highlightedIndex, options]);
 
   const multipleValueMarkup = Array.isArray(selectedOption)
     ? selectedOption.map((option: SelectOption) => (
-        <button
-          className={styles.Button}
-          key={option.value}
-          onClick={(e) => {
-            e.stopPropagation();
-            selectOption(option);
-          }}
-        >
-          <span className={styles.ButtonContainer}>
-            {option.label}
-            <span>&times;</span>
-          </span>
-        </button>
+        <span className={styles.ButtonContainer}>
+          <Button
+            label={`${option.label} \u00D7`}
+            key={option.value}
+            onClick={(e) => {
+              e.stopPropagation();
+              selectOption(option);
+            }}
+          />
+        </span>
       ))
     : null;
 
@@ -88,14 +92,12 @@ export function Select({ multiple, onChange, options, selectedOption }: SelectPr
   );
 
   const clearButtonMarkup = (
-    <button
-      className={styles.Button}
+    <Button
+      label="&times;"
       onClick={(e) => {
         handleClearValue(e);
       }}
-    >
-      &times;
-    </button>
+    />
   );
 
   const optionsMarkup = options.map((option, index) => (

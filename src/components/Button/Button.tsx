@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 type ButtonProps = {
   label: string;
   disabled?: boolean;
-  onClick?(): void;
+  onClick?(e?: any): void;
 };
 
 export function Button({ label, disabled, onClick }: ButtonProps) {
