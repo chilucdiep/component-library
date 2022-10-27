@@ -44,31 +44,10 @@ body,
   overflow-y: auto;
 }
 
-.Button {
-  background-color: white;
-  border: 1px solid rgb(221, 221, 221);
-  outline: none;
-  margin: 4px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 1em;
-  transition: color border-color 0.15s ease-in-out;
-  transition: box-shadow 0.2s ease 0s !important;
-  cursor: pointer;
-
-  &:hover {
-    color: black;
-    border-color: black;
-  }
-
-  &:focus {
-    box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(34 34 34) 0px 0px 0px 4px;
-  }
-}
-
 .ButtonContainer {
   display: flex;
   gap: 0.4em;
+  margin: 4px;
 }
 
 .Divider {
