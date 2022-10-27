@@ -1,0 +1,23 @@
+{
+  "name": "simplisty",
+  "version": "1.0.0",
+  "description": "A React component library made so you can build clean, simple and minimalist UIs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chilucdiep/simplisty.git"
+  },
+  "author": "chilucdiep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chilucdiep/simplisty/issues"
+  },
+  "homepage": "https://github.com/chilucdiep/simplisty#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "sass": "^1.55.0"
+  }
+}
