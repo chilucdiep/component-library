@@ -50,7 +50,7 @@ function App() {
       side={
         <>
           <Button label="Button label" />
-          <Button label="Button 2" />
+          <Button label="Button disabled" disabled={true} />
         </>
       }
     >
