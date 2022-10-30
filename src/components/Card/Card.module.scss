@@ -20,7 +20,6 @@ body,
 
 .Card {
   background-color: white;
-  max-width: 500px;
   @include Box-Styling();
 }
 

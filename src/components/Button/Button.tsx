@@ -18,6 +18,7 @@ export function Button({
     [styles.disabled]: disabled,
     [styles.primary]: variant === "primary",
   });
+  
   return (
     <button className={classes} disabled={disabled} onClick={onClick}>
       {label}

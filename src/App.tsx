@@ -47,10 +47,11 @@ function App() {
     <Card
       title="Card title"
       subtitle="Issa subtitle"
+      maxWidth="500px"
       side={
         <>
-          <Button label="Button label" />
-          <Button label="Button disabled" disabled={true} />
+          <Button label="Button" variant="primary" />
+          <Button label="Button disabled" disabled={true} variant="primary" />
         </>
       }
     >
