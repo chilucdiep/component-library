@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SelectOption } from "./types/Select.interface";
+import styled from "styled-components";
 import styles from "./Select.module.scss";
 import { Button } from "../Button";
 
@@ -16,15 +17,21 @@ type MultipleSelectProps = {
 };
 
 type SelectProps = {
+  maxWidth?: string;
   options: SelectOption[];
 } & (SingleSelectProps | MultipleSelectProps);
 
 export function Select({
+  maxWidth,
   multiple,
   onChange,
   options,
   selectedOption,
 }: SelectProps) {
+  const Select = styled.div`
+    max-width: ${maxWidth};
+  `;
+
   const [isOpen, setisOpen] = useState(false);
   const [highlightedIndex, sethighlightedIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -118,7 +125,7 @@ export function Select({
   ));
 
   return (
-    <div
+    <Select
       className={styles.Container}
       onBlur={() => setisOpen(false)}
       onClick={() => setisOpen((prev) => !prev)}
@@ -134,7 +141,7 @@ export function Select({
       >
         {optionsMarkup}
       </ul>
-    </div>
+    </Select>
   );
 
   function handleClearValue(e: React.MouseEvent<HTMLElement>) {

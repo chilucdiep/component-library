@@ -23,6 +23,7 @@ function App() {
 
   const singleSelectComponentMarkup = (
     <Select
+      maxWidth="500px"
       onChange={(option) => setSelectedOption(option)}
       options={mockOptions}
       selectedOption={selectedOption}
@@ -36,6 +37,7 @@ function App() {
 
   const multiSelectComponentMarkup = (
     <Select
+      maxWidth="500px"
       multiple
       onChange={(option) => setSelectedOptions(option)}
       options={mockOptions}
