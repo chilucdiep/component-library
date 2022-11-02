@@ -4,6 +4,7 @@ import { Counter } from "./components/Counter/Counter";
 import { Select } from "./components/Select";
 import { Button } from "./components/Button";
 import { SelectOption } from "./components/Select/types/Select.interface";
+import { TextField } from "./components/TextField";
 
 // This App component allows me to display the use cases of my component library as examples.
 
@@ -99,6 +100,10 @@ function App() {
       <br />
       <h1>Button Component</h1>
       {buttonComponentMarkup}
+      <br />
+      <br />
+      <h1>Text Field Component</h1>
+      <TextField maxWidth="100%" />
     </>
   );
 }
