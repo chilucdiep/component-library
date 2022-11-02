@@ -103,7 +103,7 @@ function App() {
       <br />
       <br />
       <h1>Text Field Component</h1>
-      <TextField maxWidth="100%" />
+      <TextField maxWidth="500px" />
     </>
   );
 }

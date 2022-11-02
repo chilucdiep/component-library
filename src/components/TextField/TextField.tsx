@@ -9,15 +9,15 @@ type TextFieldProps = {
 
 export function TextField({ placeholder, maxWidth="100%", onChange }: TextFieldProps) {
   const TextField = styled.input`
-    width: ${maxWidth};
+    max-width: ${maxWidth};
   `;
 
   return (
-    <input
+    <TextField
       className={styles.TextField}
       type="text"
       placeholder={placeholder}
       onChange={onChange}
-    ></input>
+    ></TextField>
   );
 }
