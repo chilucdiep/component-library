@@ -45,7 +45,7 @@ export function Select({
     }
   }, [isOpen]);
 
-  useEffect(() => {
+  useEffect(() => {    
     function handler(e: KeyboardEvent) {
       if (e.target !== containerRef.current) return;
 
@@ -76,14 +76,14 @@ export function Select({
           break;
       }
     }
-
+    
     containerRef.current?.addEventListener("keydown", handler);
     containerRef.current?.focus();
 
     return () => {
       containerRef.current?.removeEventListener("keydown", handler);
     };
-  }, [isOpen, highlightedIndex, options]);
+  }, [isOpen, highlightedIndex, options, containerRef.current, selectedOption]);
 
   const multipleValueMarkup = Array.isArray(selectedOption)
     ? selectedOption.map((option: SelectOption) => (
