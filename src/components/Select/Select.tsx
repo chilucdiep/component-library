@@ -37,7 +37,12 @@ export function Select({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isOpen) sethighlightedIndex(0);
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      sethighlightedIndex(0);
+    } else {
+      document.body.style.overflow = "unset";
+    }
   }, [isOpen]);
 
   useEffect(() => {
@@ -49,7 +54,9 @@ export function Select({
         case "Space":
           setisOpen((prev) => !prev);
 
-          if (isOpen) selectOption(options[highlightedIndex]);
+          if (isOpen) {
+            selectOption(options[highlightedIndex]);
+          }
           break;
 
         case "ArrowUp":
@@ -71,6 +78,7 @@ export function Select({
     }
 
     containerRef.current?.addEventListener("keydown", handler);
+    containerRef.current?.focus();
 
     return () => {
       containerRef.current?.removeEventListener("keydown", handler);
