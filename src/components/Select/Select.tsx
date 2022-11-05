@@ -4,22 +4,24 @@ import styled from "styled-components";
 import styles from "./Select.module.scss";
 import { Button } from "../Button";
 
-type SingleSelectProps = {
+type SelectPropsBase = {
+  maxWidth?: string;
+  options: SelectOption[];
+}
+
+interface SingleSelectProps extends SelectPropsBase {
   multiple?: false;
   selectedOption?: SelectOption;
   onChange: (selectedOption?: SelectOption) => void;
 };
 
-type MultipleSelectProps = {
+interface MultipleSelectProps extends SelectPropsBase {
   multiple: true;
   selectedOption: SelectOption[];
   onChange: (selectedOption: SelectOption[]) => void;
 };
 
-type SelectProps = {
-  maxWidth?: string;
-  options: SelectOption[];
-} & (SingleSelectProps | MultipleSelectProps);
+type SelectProps = SingleSelectProps | MultipleSelectProps;
 
 export function Select({
   maxWidth,

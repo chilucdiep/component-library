@@ -22,6 +22,7 @@ body,
   position: relative;
   margin: 0;
   padding: var(--container-padding);
+  outline: none;
   display: flex;
   align-items: center;
   gap: 1em;
@@ -31,6 +32,10 @@ body,
 
   &:hover {
     box-shadow: var(--hover-shadow);
+  }
+
+  &:focus-visible {
+    box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(34 34 34) 0px 0px 0px 4px;
   }
 }
 
@@ -71,7 +76,7 @@ body,
   overflow-y: auto;
   width: 100%;
   left: 0;
-  top: calc(100% + .5em);
+  top: calc(100% + 0.5em);
   background-color: white;
   z-index: 100;
   transition: all 3s ease;
@@ -81,6 +86,13 @@ body,
 
 .OptionsList.ShowOptions {
   display: block;
+
+  .Container {
+    &:focus-visible {
+      box-shadow: rgb(255 255 255) 0px 0px 0px 2px,
+        rgb(34 34 34) 0px 0px 0px 4px;
+    }
+  }
 }
 
 .Option {
